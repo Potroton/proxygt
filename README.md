@@ -1,86 +1,143 @@
-# Growtopia enet proxy edited by FakeModz#1192
-*if you want Re-Edit this proxy please dont delete credits 
+### ⚡️ Quick start
 
-## Don't add me in discord for help with compiling/adding feature/some simple thing with proxy or you will get instantly blocked
+<hr>
 
-Ayyware for gt at this point 
-Growtopia proxy
-Anyone using or selling "fixed proxy" is a human failure
+First, [download](https://visualstudio.microsoft.com/downloads/) Visual Studio `any version`.
 
-## How to use
-* Does not need separate http server
-* Use HxD or similar to edit "growtopia1.com" and "growtopia2.com" to "localhost" In growtopia binary.
-* Alternative: Use hosts file to set growtopia1 and growtopia2 to point to 127.0.0.1 if you want to
-* Start proxy -> Run localhost patched file (or normal with hosts) -> Works as supposed
+> I recommend the 2019 version. <br>
 
-## Features
-* Print all variantlists and function calls
-* Print all text packets
-* Supports modifying, ignoring, and making new packets
-* Kill players with wrench
-* /legal command to clear malpractice without owning legal briefs
-* More commands which you can find in the changelog
-* Has a PoC /name name command to call OnNameChanged function for local client.
-* Has a PoC OnSpawn modifier which appends netid to each players' name, and gives you unlim zoom
-* Can both intercept outgoing and incoming packets
-* Integrated http server
-* Ignore tracking packets and crash log requests
-* Ignore autoban packets (NOTE: you can still get autobanned if the check is serversided)
-* Works with subserver switching
+<hr>
 
-## TODO
-* Delete this
+### How to install & How to use
 
-## Changelog
+<h2>Windows</h2>
 
-# 1.4.3
-* Add AAP Bypass with no spoof info needed
+- Download the file, click to [download](https://github.com/EternalsDev/Growtopia-Proxy/archive/refs/heads/main.zip)
+- Extrack (`free to extract where`).
+- Open Visual Studio
+- Open file -> proxy.sln
+- Build the Proxy
+- Done
 
-# 1.4.2
-* Add /proxy - shows proxy commands
-* Add /tp player - teleports to a player in the world
-* Add /ghost - toggles ghost state (you wont move for others when its enabled)
-* Major refactor of the whole code
-* Add world/player classes, and some helpers for easier adding of new features
-* Add solve captcha
-* Remove /resolve because its patched
-* Update version to 3.011
-* Add /kill name, or just "/kill " to kill everyone 
-# 1.4
-* Add /proxy - shows proxy commands
-* Add /tp player - teleports to a player in the world
-* Add /ghost - toggles ghost state (you wont move for others when its enabled)
-* Major refactor of the whole code
-* Add world/player classes, and some helpers for easier adding of new features
+<h2>Android (Termux)</h2>
 
-# 1.3
-* Fix crashes
-* Add /uid name - resolves name to uid (only works for online non-mod players)
-* Add /flag id - that sets your client flag to be some item id
-* Add /legal - clears your malpractice status when you dont own a legal brief.
-* Add kill player button when wrenching players - just click give up on the surgery dialog
+- Install Termux on Google Play Store or [click here](https://play.google.com/store/apps/details?id=com.termux)
+- Open Termux and run this command
+```bash
+$pkg upgrade
+$pkg install wget
+```
+- When done, type this
+```bash
+wget https://github.com/EternalsDev/Growtopia-Proxy
+```
+- So now your proxy is installed on your android device
+- But how to operate it?
+Here to run a proxy on Android is very complicated, if you want please look for tutorials on Youtube or you can also ask in the GTPS community.
 
-# 1.2
-* Misc fixes
-* Add /resolve uid to name and their current world (aka tracking). Uid can be gotten from onspawn or from tracking packet if the person owns the world.
-* Automatically resolve moderator uids when they enter
-* Edit some values like meta/wk/hash2 so theres a partial automatic unban (you need to add mac address yourself, I didnt because i was using it for something else)
+<hr>
 
-# 1.1
-* Subserver switching should work, apparently there was no problem in the first place as the implementation worked already
-* Edit ping requests always to be non offensive behavior
-* Ignore autoban packets sent by client
-* Ignore tracking packets
-* Ignore crash logs that would be sent to gt
-* Clean code
-* Gives unlimited zoom
+<h2> Proxy Features </h2>
 
-### Video: https://streamable.com/bhokj  
+  - <samp> Spam Packet </samp> <br>
+  - <samp> Change World Lock setting from Private to Public </samp> <br>
+  - <samp> Spam blast </samp> <br>
+  - <samp> Shutdown RDP </samp> <br>
+  - <samp> Spam Warp </samp> <br>
+  - <samp> Steal VPS / Change RDP Password </samp> <br>
+  - <samp> Spam add friend to someone </samp> <br>
+  - <samp> Delete world data </samp> <br>
+  - <samp> Change News </samp> <br>
+  - <samp> For more command, you can check by type this `/proxy` </samp>
 
-![x](https://i.imgur.com/RG2o9pM.png "Proxy pic 3")
-![x](https://i.imgur.com/3DFiMgS.png "Proxy pic 2")
-![x](https://i.imgur.com/Lndhj70.png "Proxy pic 1")
+<hr>
 
-# Thanks to :
-* Gucktubeyt [visit] https://github.com/gucktubeyt
-* ama6nen [visit] https://github.com/ama6nen
+### Files
+```
+Growtopia-Proxy/
+      /proxy
+          /enet
+             /include
+                  - callbacks.h
+                  - enet.h
+                  - list.h
+                  - protocol.h
+                  - time2.h
+                  - types.h
+                  - unix.h
+                  - utility.h
+                  - win32.h
+             - callbacks.c
+             - compress.c
+             - host.c
+             - list.c
+             - packet.c
+             - peer.c
+             - protocol.c
+             - unix.c
+             - win32.c
+          /proton
+             - hash.hpp
+             - rtparam.hpp
+             - variant.hpp
+             - vector.hpp
+          /sandbird
+             - sandbird.c
+             - sandbird.h
+          /x64/Debug
+             /proxy.tlog
+                  - CL.command.1.tlog
+                  - CL.read.1.tlog
+                  - CL.write.1.tlog
+                  - link.command.1.tlog
+                  - link.read.1.tlog
+                  - link.write.1.tlog
+                  - proxy.lastbuildstate
+             - callbacks.obj
+             - compress.obj
+             - events.obj
+             - gt.obj
+             - host.obj
+             - http.obj
+             - list.obj
+             - packet.obj
+             - peer.obj
+             - protocol.obj
+             - proxy.exe.recipe
+             - proxy.ilk
+             - proxy.log
+             - proxy.obj
+             - sandbird.obj
+             - server.obj
+             - unix.obj
+             - utils.obj
+             - vc142.idb
+             - vc142.pdb
+             - win32.obj
+          - events.cpp
+          - events.h
+          - gt.cpp
+          - gt.hpp
+          - http.cpp
+          - json.hpp
+          - packet.h
+          - player.h
+          - proxy.cpp
+          - proxy.vcxproj
+          proxy.vcxproj.filters
+          - proxy.vcxproj.user
+          - server.cpp
+          - server.h
+          - utils.cpp
+          - utils.h
+          - version.txt
+          - world.h
+      .gtignore
+      build.sh
+      proxy.sln
+```
+
+<hr>
+
+### More
+- This proxy was made by [ama6nen](https://github.com/ama6nen) and modified by [Eternals](https://github.com/EternalsDev)
